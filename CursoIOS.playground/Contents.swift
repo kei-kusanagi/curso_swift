@@ -148,3 +148,75 @@ print(tupla.5)
 
 // Diccionarios
 
+var dicc:[String: Any] = ["name": "Kei", "Age": 31, "im Happy": true, "adress": "calle mi casa"]
+var myDiccionaryName: String = dicc["name"] as? String ?? "Pepito"
+print(myDiccionaryName)
+
+for (key, value) in dicc{
+    print("La clave \(key) continue \(value)")
+}
+
+
+// Nullabilidad
+
+var stringReal: String = "soy una variable"
+var stringNil: String? = nil
+
+print(stringReal)
+print(stringNil)
+
+func ejemploNil(_ text:String){
+    // me la suda
+}
+
+
+ejemploNil(stringReal)
+ejemploNil(stringNil ?? "ejemplo")
+// ejemploNil(stringNil!)
+
+
+func ejemploNil2(_ text:String?){
+    if let example = text {
+        print(example)
+    }else{
+        print("introduce un nombre pa  continuar")
+    }
+    guard let example2 = text else {
+        return
+    }
+    print("hola")
+}
+
+ejemploNil2(stringReal)
+ejemploNil2(stringNil)
+
+
+// clases
+
+class Persona{
+    var name: String
+    var age:Int
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+    func greetings(){
+        print("Hola, soy \(name) y tengo \(age) años.")
+    }
+}
+
+
+var kei:Persona = Persona(name: "Kei Kusanagi", age: 41)
+var pepe:Persona = Persona(name: "Pepito", age: 81)
+
+kei.greetings()
+pepe.greetings()
+
+struct ExampleStruct{
+    var name:String
+    var age:Int
+}
+
+var exampleStruct:ExampleStruct = ExampleStruct(name: "kei", age: 41)
+
